@@ -4,7 +4,9 @@ import ListPosts from './ListPosts'
 const HomeAuth: NextPage = () => {
     
   return (
-    <div>
+    <div style={{
+      width: '600px'
+    }}>
       <ListPosts />
     </div>
   )

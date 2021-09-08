@@ -11,6 +11,7 @@ const Sidebar: NextPage = () => {
     width: 300px;
     margin-top: 30px; 
     border: 2px solid var(--secondary);
+    max-height: 1000px;
   `
     
   return (

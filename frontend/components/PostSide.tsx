@@ -12,7 +12,7 @@ const PostSide: NextPage = () => {
     width: 100%;
     margin-top: 20px; 
     padding: 10px;
-    border: 1px solid var(--primary);
+    box-shadow: 0px 0px 6px var(--secondary);
     border-radius: 20px; 
     .contentPostSide {
       display: flex;

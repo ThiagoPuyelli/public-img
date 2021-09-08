@@ -6,14 +6,14 @@ import noLike from '../public/noLike.svg'
 const Post: NextPage = () => {
   const PostStyled = styled.div`
     padding: 20px;
-    width: 300px;
+    width: 500px;
     box-shadow: 0px 0px 4px var(--secondary);
     border: 2px solid var(--secondary);
-    margin-top: 20px;
+    margin: 20px;
     .imagePost * {
       position: relative !important;
       width: 100%;
-      height: 150px;
+      height: 250px;
     }
     .likes {
       display: flex;

@@ -5,8 +5,8 @@ import styled from "@emotion/styled";
 const ListPosts: NextPage = () => {
   const ListStyled = styled.div`
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
     padding: 20px;
   `
 
