@@ -23,9 +23,9 @@ const Welcome: NextPage = () => {
       margin-top: 30px;
       padding: 10px;
       width: 300px;
-      border: 2px solid var(--secondary);
+      border: 5px solid var(--secondary);
+      border-top: none;
       boxShadow: 0px 0px 4px var(--secondary);
-      border-radius: 20px;
       font-size: 25px;
       text-align: center;
       font-weight: bold;

@@ -4,8 +4,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: var(--primary); 
-  color: var(--font);
+  background-color: var(--font); 
+  color: black;
 }
 
 a {
@@ -18,7 +18,18 @@ a {
 }
 
 :root  {
-  --primary: #464D77;
-  --secondary: #181f44;
-  --font: #F4EDED;
+  --firstPrimary: #464D77;
+  --firstSecondary: #181f44;
+  --primary: rgb(247, 163, 37);
+  --secondary: rgb(197, 128, 23);
+  --font: #ffffff;
+}
+
+@keyframes subButton {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
