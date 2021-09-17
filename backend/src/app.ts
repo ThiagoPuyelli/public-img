@@ -5,14 +5,20 @@ import morgan from 'morgan'
 import cors from 'cors'
 import { config } from 'dotenv'
 import { connect } from 'mongoose'
+import passportAuth from './passport/passport-auth'
+import passportJwt from './passport/passport-jwt'
+import authRoutes from './routes/auth.routes'
 
 export class App {
   public app: Application = express()
 
   constructor () {
     config()
+    passportAuth()
+    passportJwt()
     this.setMiddlewares()
     this.connectDatabase()
+    this.setRoutes()
   }
 
   setMiddlewares () {
@@ -43,5 +49,9 @@ export class App {
     } catch (err) {
       console.log(err)
     }
+  }
+
+  setRoutes () {
+    this.app.use('/auth/', authRoutes)
   }
 }

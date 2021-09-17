@@ -2,5 +2,8 @@ export default interface UserInterface {
   username: string;
   email: string;
   password: string;
-  posts: any[];
+  description: string;
+  image: string;
+  posts: any;
+  comparePasswords?: Function;
 }

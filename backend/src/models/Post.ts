@@ -16,7 +16,17 @@ const postSchema = new Schema<Document & PostInterface>({
     type: String,
     required: true,
     maxlength: 30
+  },
+  likes: {
+    type: [Schema.Types.ObjectId],
+    ref: 'User',
+    required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
 })
 
-export default model<PostInterface>('Post', postSchema)
+export default model<PostInterface & Document>('Post', postSchema)
