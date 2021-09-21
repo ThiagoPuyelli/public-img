@@ -9,7 +9,7 @@ export default () => {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.JWT_PASSWORD
   }, async (payload, done) => {
-    let user: any = await User.findById(payload.id)
+    let user: any = await User.findById(payload.userID)
 
     if (!user) {
       return done('Error to authorize user', false)

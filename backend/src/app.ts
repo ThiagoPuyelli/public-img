@@ -7,7 +7,10 @@ import { config } from 'dotenv'
 import { connect } from 'mongoose'
 import passportAuth from './passport/passport-auth'
 import passportJwt from './passport/passport-jwt'
+
+// Routes
 import authRoutes from './routes/auth.routes'
+import postRoutes from './routes/post.routes'
 
 export class App {
   public app: Application = express()
@@ -53,5 +56,6 @@ export class App {
 
   setRoutes () {
     this.app.use('/auth/', authRoutes)
+    this.app.use('/post/', postRoutes)
   }
 }
