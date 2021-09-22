@@ -20,7 +20,8 @@ const postSchema = new Schema<Document & PostInterface>({
   likes: {
     type: [Schema.Types.ObjectId],
     ref: 'User',
-    required: true
+    required: true,
+    default: []
   },
   user: {
     type: Schema.Types.ObjectId,

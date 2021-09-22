@@ -53,8 +53,14 @@ router.get('/id/:id', passport.authenticate('token'), async (req, res) => {
 
 router.get('/user', passport.authenticate('token'), async (req, res) => {
   try {
-    const { posts }: any = await Post.populate(req.user, { path: 'posts' })
-    console.log(posts)
+    const user = await User.findById(req.user._id)
+    const { posts }: any = await user.populate('posts')
+
+    if (!posts) {
+      return sendResponse(res, 500, 'Error to find posts')
+    }
+
+    return sendResponse(res, 200, { posts })
   } catch (err) {
     return sendResponse(res, 500, err.message || 'Server error')
   }

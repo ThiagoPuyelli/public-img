@@ -10,6 +10,7 @@ import passportJwt from './passport/passport-jwt'
 
 // Routes
 import authRoutes from './routes/auth.routes'
+import likeRoutes from './routes/like.routes'
 import postRoutes from './routes/post.routes'
 
 export class App {
@@ -56,6 +57,7 @@ export class App {
 
   setRoutes () {
     this.app.use('/auth/', authRoutes)
+    this.app.use('/like/', likeRoutes)
     this.app.use('/post/', postRoutes)
   }
 }
