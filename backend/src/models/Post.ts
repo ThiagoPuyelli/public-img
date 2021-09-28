@@ -9,7 +9,7 @@ const postSchema = new Schema<Document & PostInterface>({
   },
   description: {
     type: String,
-    required: true,
+    required: false,
     maxlength: 400
   },
   image: {

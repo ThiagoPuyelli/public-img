@@ -18,6 +18,12 @@ router.post('/sign-up', multer.single('image'), validatorReq(userSign, 'body'), 
       return sendResponse(res, 401, 'The email is already used')
     }
 
+    const verifyUsername = await User.findOne({ email: req.body.username })
+    if (verifyUsername) {
+      await fs.unlinkSync(path.join(__dirname, '/../uploads/' + req.file.filename))
+      return sendResponse(res, 401, 'The username is already used')
+    }
+
     const user = await User.create(req.body)
 
     if (!user) {

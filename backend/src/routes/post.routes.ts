@@ -18,6 +18,9 @@ router.get('/find/:amount/:page?', passport.authenticate('token'), async (req, r
       page = '1'
     }
     const posts = await Post.find()
+    for (const i in posts) {
+      posts[i] = await posts[i].populate('user', 'username')
+    }
 
     if (parseInt(amount) >= posts.length) {
       return sendResponse(res, 200, {
@@ -39,7 +42,8 @@ router.get('/find/:amount/:page?', passport.authenticate('token'), async (req, r
 
 router.get('/id/:id', passport.authenticate('token'), async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id)
+    let post = await Post.findById(req.params.id)
+    post = await post.populate('user', 'username')
 
     if (!post) {
       return sendResponse(res, 500, 'Error to find post')
