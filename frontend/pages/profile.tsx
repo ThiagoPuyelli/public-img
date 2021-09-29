@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import styled from '@emotion/styled'
-import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Image from 'next/image'
 import React from 'react'
@@ -44,7 +43,6 @@ const Profile: NextPage = () => {
     
   return (
     <React.Fragment>
-      <Header />    
       <ProfileStyled>
         <div className="dataProfile">
           <div className='avatar'>
@@ -71,7 +69,6 @@ const Profile: NextPage = () => {
         <p className='descriptionProfile'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint animi veritatis sit doloribus, dolorem tempore illum rerum esse distinctio dolorum ipsa, omnis nemo, alias cumque quis ad saepe consequuntur similique. Laudantium beatae accusamus saepe vel mollitia, nihil, tenetur ipsa voluptatum tempore reiciendis, quaerat rerum excepturi facere maiores eveniet dolores repellendus?</p>
         <ListPosts />
       </ProfileStyled>
-      <Footer />  
     </React.Fragment>
   )
 }

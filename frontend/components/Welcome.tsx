@@ -8,6 +8,7 @@ const Welcome: NextPage = () => {
     flex-flow: column wrap;
     align-items: center;
     padding-top: 25px;
+    padding-bottom: 25px;
     .titleWelcome {
       font-family: sans-serif;
       font-size: 45px;
