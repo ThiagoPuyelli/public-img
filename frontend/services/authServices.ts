@@ -5,7 +5,12 @@ import { env } from '../next.config'
 export const authService = (body: AuthInterface) => {
   try {
     if (env) {
-      return axios.post(env.URL + '/sign-in', body)
+      const encode = window.btoa(body.email + ':' + body.password)
+      return axios.post(env.URL + '/auth/sign-in', {}, {
+        headers: {
+          'Authorization': 'Basic ' + encode
+        }
+      })
     } else {
       return axios.get('')
     }

@@ -18,7 +18,7 @@ export const authReducer = (state = initialState, { type, payload }: any) => {
       case AUTH_LOADING:
         return { ...state, isLoading: true }
       case AUTH_SUCCESS:
-        return { ...state, isLoading: false, isAuth: true, token: payload }
+        return { ...state, isAuthFailed: false, isLoading: false, isAuth: true, token: payload }
       case AUTH_FAILED:
         return { ...initialState, isAuthFailed: true }
       case AUTH_LOGOUT:
